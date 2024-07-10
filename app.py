@@ -4,7 +4,7 @@ import string
 import nltk
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
-pip install streamlit pandas nltk
+
 # Ensure nltk resources are downloaded
 nltk.download('stopwords')
 nltk.download('punkt')
