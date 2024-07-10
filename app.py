@@ -5,24 +5,9 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 
-import os
-
 # Ensure nltk resources are downloaded
-nltk_data_dir = os.path.expanduser('~/nltk_data')
-if not os.path.exists(nltk_data_dir):
-    os.makedirs(nltk_data_dir)
-
-try:
-    nltk.data.find('corpora/stopwords.zip')
-except LookupError:
-    nltk.download('stopwords', download_dir=nltk_data_dir)
-
-try:
-    nltk.data.find('tokenizers/punkt.zip')
-except LookupError:
-    nltk.download('punkt', download_dir=nltk_data_dir)
-
-nltk.data.path.append(nltk_data_dir)
+nltk.download('stopwords')
+nltk.download('punkt')
 ps = PorterStemmer()
 
 def transform_text(text):
